@@ -1,0 +1,34 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background: url("images/light-grey-terrazzo.png");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dhurjati', sans-serif;
+}
+
+.tabela td {
+    /*border: 1px solid black;*/
+    /*border-collapse: collapse;*/
+    padding: 1px;
+}
+.table{
+    background-color: azure;
+}
+
+.nav-size{
+    font-size: large;
+}
+
+.image-size{
+    width: 30%;
+    height: 30%;
+}
+
+.nav-pills{
+    background-color: aqua;
+}
+
+.lightbox{
+    z-index: 1041;
+}

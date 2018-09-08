@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bibliotezka</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Dhurjati|Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+          crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" th:href="@{css/style.css}" type="text/css">
+
+</head>
+<body>
+
+<div th:insert="~{includes/includesHTML :: menu}"></div>
+
+<div class="container">
+    <h1>MY LIBRARY</h1>
+</div>
+
+<div class="container">
+    <form th:action="@{/library}" method="post" th:object="${libraryDto}" >
+        <p>Tytół <input type="text" th:field="*{title}" placeholder="tytuł"></p>
+        <p>Autor <input type="text" th:field="*{author}" placeholder="autor"></p>
+        <p>Ilość stron <input type="number" th:field="*{pages}" placeholder="ilość stron"></p>
+        <p>Rok publikacji <input type="text" th:field="*{yearOfPublication}" placeholder="rok publikacji"></p>
+        <p>Notatki <textarea th:field="*{notes}"></textarea></p>
+        <p><input class="btn btn-default" type="submit" value="Dodaj książkę"></p>
+
+    </form>
+
+</div>
+
+<div class="container">
+    <div  class="table-responsive">
+        <table class="table table-bordered" cellpadding="2" cellspacing="0" align="center" border="solid">
+            <tr>
+                <th>Id</th>
+                <th>Tytuł</th>
+                <th>Autor</th>
+                <th>ilość stron</th>
+                <th>Rok wydania</th>
+                <th>Notatki</th>
+                <th>Data dodania</th>
+            </tr>
+
+            <tr th:block th:each= "element : ${library}">
+                <td th:text="${element.id}"></td>
+                <td th:text="${element.title}"></td>
+                <td th:text="${element.author}"></td>
+                <td th:text="${element.pages}"></td>
+                <td th:text="${element.yearOfPublication}"></td>
+                <td th:text="${element.notes}"></td>
+                <td th:text="${#dates.format(element.addBook,'yyyy-MM-dd HH:mm')}"></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

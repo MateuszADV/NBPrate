@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona główna</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Dhurjati|Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+          crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+
+    <link rel="stylesheet" th:href="@{css/style.css}" type="text/css">
+
+</head>
+<body>
+
+
+<div th:insert="~{includes/includesHTML :: menu}"></div>
+
+<div class="container">
+    <h1>Strana główna</h1>
+
+    <div class="axis-label">
+        <ol class="alert alert-success" role="alert">
+            <li>Test strony, z wykorzystanie bazy PostGreSQL  </li>
+            <li>Rejestracja użytkownika z weryfikją wprowadzanych danych</li>
+            <li>Hasło jest hashowane przy użyciu BCrypt</li>
+            <li>Logowanie użytkownika</li>
+            <li>Wyswietlanie aktualnego kursu walut pobranego ze strony NBP</li>
+            <li>Mała biblioteka, do której mozna dodać swoje książki z podstawowymi danymi</li>
+            <li>Api restowe wyświetlająca dane użytkownika oraz zawartych w bazie jego książek(/api/login/{login}</li>
+        </ol>
+
+    </div>
+
+    <div class="container">
+        <div class="lightbox-content">
+            <a href="#" class="thumbnail image-size" data-toggle="modal" rel="lightbox">
+                <img src="https://s3.amazonaws.com/ooomf-com-files/lqCNpAk3SCm0bdyd5aA0_IMG_4060_1%20copy.jpg" alt="...">
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <p th:text="${testNbp}"></p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

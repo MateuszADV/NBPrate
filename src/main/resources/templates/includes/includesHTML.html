@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Includes</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+          crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" th:href="@{css/style.css}" type="text/css">
+
+</head>
+<body>
+
+<div class="container" th:fragment="menu">
+    <div class="container">
+        <p class="navbar-text navbar-right nav-size" >Zalogowany
+            <a href="#" class="navbar-link" th:text="${login}+'  -  '"></a>
+            <a href="/logout" class="navbar-link">
+                <span class="glyphicon glyphicon-log-out nav-size" aria-hidden="true">Logout</span>
+            </a>
+        </p>
+    </div>
+<div class="container">
+    <ul class="nav nav-pills">
+        <li class="active nav-size" role="presentation"><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  Home</a></li>
+        <li class="nav-size" role="presentation"><a href="kurswalut"><span aria-hidden="true"><i class="fa fa-cc-mastercard"></i></span>  Kurs walut</a></li>
+        <li class="nav-size" role="presentation"><a href="library"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>  Biblioteka</a></li>
+        <li class="nav-size" role="presentation"><a href="lightbox"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>  Bootstrap </a></li>
+    </ul>
+</div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>
